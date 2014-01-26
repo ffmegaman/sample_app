@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
-get "users/new"
+# resources are endowed with all the actions
+resources :users
 
 root to: 'static_pages#home'
 
