@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   	# for example, user_email, user_name, user_password, etc...
   	@user = User.new(params[:user])
   	if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
   		# Handle a successful save a redirect to profile page
   		redirect_to @user
