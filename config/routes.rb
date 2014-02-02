@@ -1,7 +1,8 @@
 SampleApp::Application.routes.draw do
 # resources are endowed with all the actions
 resources :users
-resources :sessions, only: [:new, :create, :destroy]
+resources :sessions,   only: [:new, :create, :destroy]
+resources :microposts, only: [:create, :destroy]
 
 
 root to: 'static_pages#home'
