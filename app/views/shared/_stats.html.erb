@@ -1,0 +1,25 @@
+<% 
+=begin 
+%> This is a comment block
+	The below line, @user||=current_user means that @user is current_user or @user.
+	1. if in profile page, use @user to display stats
+	2. if in homepage, it will set @user to the current_user
+<% 
+=end 
+%>
+
+<% @user ||= current_user %>
+<div class="stats">
+	<a href="<%= following_user_path(@user) %>">
+		<strong id="following" class="stat">
+			<%= @user.followed_users.count %>
+		</strong>
+		following
+	</a>
+	<a href="<%= followers_user_path(@user) %>">
+		<strong id="followers" class="stat">
+			<%= @user.followers.count %>
+		</strong>
+		followers
+	</a>
+</div>

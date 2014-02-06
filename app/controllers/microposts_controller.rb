@@ -21,6 +21,7 @@ class MicropostsController < ApplicationController
 
 
 
+
 	private
 
     def correct_user
